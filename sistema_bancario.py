@@ -23,7 +23,7 @@ while True:
         if deposito > 0:
             saldo += deposito
             print(f"Saldo atual: R${saldo:.2f}")
-            extrato_temp = f"Depósito: R${saldo:.2f}"
+            extrato_temp = f"Depósito: R${deposito:.2f}"
             extrato.append(extrato_temp)
         else:
             print("Valor do depósito inválido.")
@@ -33,11 +33,13 @@ while True:
         if numero_saques < LIMITE_SAQUES:
             valor_saque = float(input("Digite o valor a ser sacado: "))
             if valor_saque > 0:
-                if (valor_saque <= 500):
+                if valor_saque <= 500:
                     if saldo >= valor_saque:
                         saldo -= valor_saque
                         numero_saques += 1
-                        print(f"Saque realizado com sucesso! Saldo atual: R${saldo:.2f}")
+                        print(
+                            f"Saque realizado com sucesso! Saldo atual: R${saldo:.2f}"
+                        )
                         extrato_temp = f"Saque: R${valor_saque:.2f}"
                         extrato.append(extrato_temp)
                     else:
